@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+components/rhob_3d/node_modules/
+.pytest_cache/
+test-results/
+.DS_Store
