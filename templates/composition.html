@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block sub %}Multi-site decarburization kinetics, C–O equilibrium, H/N degassing (Sieverts){% endblock %}
+{% block content %}
+<div class="grid g2"><section class="panel "><h3>Decarburization rate by reaction site<span class="tag">ppm/min stacked</span></h3><div class="body"><div class="plot " id="pSites"></div></div></section><section class="panel "><h3>Cumulative carbon removed by site<span class="tag">kg</span></h3><div class="body"><div class="plot " id="pCum"></div></div></section>
+<section class="panel "><h3>C, O and equilibrium references<span class="tag">log</span></h3><div class="body"><div class="plot " id="pCeq"></div></div></section><section class="panel "><h3>C–O path vs equilibrium lines (p_CO)<span class="tag">wt% log-log</span></h3><div class="body"><div class="plot " id="pPath"></div></div></section>
+<section class="panel "><h3>Apparent decarburization constant & surface area<span class="tag"></span></h3><div class="body"><div class="plot " id="pK"></div></div></section><section class="panel "><h3>Hydrogen: bath vs Sieverts equilibrium; removal by site<span class="tag"></span></h3><div class="body"><div class="plot " id="pH"></div></div></section>
+<section class="panel "><h3>Nitrogen: bath, equilibrium, poisoned kinetics<span class="tag"></span></h3><div class="body"><div class="plot " id="pN"></div></div></section><section class="panel "><h3>Ladle vs vessel composition (zone gradient)<span class="tag"></span></h3><div class="body"><div class="plot " id="pZone"></div></div></section></div>
+<section class="panel "><h3>Composition table at RH end (bulk / ladle / vessel)<span class="tag">ppm</span></h3><div class="body"><div id="compTbl"></div></div></section>
+{% endblock %}

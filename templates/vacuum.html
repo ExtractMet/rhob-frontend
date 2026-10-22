@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block sub %}Dynamic gas inventory, pump capacity curve, throttle, leak, off-gas composition{% endblock %}
+{% block content %}
+<div class="tiles" id="vtiles" style="margin-bottom:12px"></div>
+<div class="grid g2"><section class="panel "><h3>Vessel pressure vs set-point<span class="tag">log</span></h3><div class="body"><div class="plot " id="pP"></div></div></section><section class="panel "><h3>Pump capacity (dry-air equiv.) & throttle<span class="tag"></span></h3><div class="body"><div class="plot " id="pPump"></div></div></section>
+<section class="panel "><h3>Off-gas flows by species<span class="tag">Nm³/h stacked</span></h3><div class="body"><div class="plot " id="pFlows"></div></div></section><section class="panel "><h3>Vessel gas composition<span class="tag">mole fraction</span></h3><div class="body"><div class="plot " id="pX"></div></div></section>
+<section class="panel "><h3>Ejector capacity curve & operating points<span class="tag">kg/h vs suction P</span></h3><div class="body"><div class="plot " id="pCurve"></div></div></section><section class="panel "><h3>Actual volumetric speed & cumulative pumped gas / steam<span class="tag"></span></h3><div class="body"><div class="plot " id="pS"></div></div></section></div>
+{% endblock %}

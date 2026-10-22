@@ -1,0 +1,14 @@
+Copyright (c) 2026 Extractmet Private Limited (IIT Madras Research Park, Chennai, India).
+All rights reserved.
+
+PROPRIETARY EVALUATION LICENCE - RH-OB Process Control and Digital Twin (frontend).
+
+The software is provided for evaluation and engineering demonstration. Use in plant
+operation requires a separate written licence and the site validation, OT-security and
+safety approvals described in the backend repository docs/SAFETY_LIMITATIONS.md.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. IT IS NOT A SAFETY-RATED
+CONTROL SYSTEM AND MUST NOT BE USED AS ONE.
+
+Third-party components: FastAPI (MIT), Uvicorn (BSD-3), Jinja2 (BSD-3), itsdangerous (BSD-3),
+httpx (BSD-3), three.js r160 (MIT, static/vendor/three/LICENSE), plotly.js 2.35.2 (MIT,
+static/vendor/PLOTLY_LICENSE). All 3D geometry, icons and the logo placeholder are original work.

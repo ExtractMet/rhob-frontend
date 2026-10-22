@@ -1,0 +1,8 @@
+# rhob-frontend runtime (Python web server + Jinja2 templates; UI = HTML/CSS/Three.js/Plotly.js static assets)
+fastapi==0.150.0
+uvicorn==0.54.0
+Jinja2==3.1.6
+itsdangerous==2.2.0
+python-multipart==0.0.32
+httpx==0.28.1
+PyYAML==6.0.3

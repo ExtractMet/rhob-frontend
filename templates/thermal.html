@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block sub %}Coupled conduction–convection–radiation, refractory design, heat sources & sinks, caster superheat{% endblock %}
+{% block content %}
+<div class="tiles" id="ttiles" style="margin-bottom:12px"></div>
+<div class="grid g2"><section class="panel "><h3>Steel, slag, gas temperatures<span class="tag"></span></h3><div class="body"><div class="plot " id="pTemps"></div></div></section><section class="panel "><h3>Heat losses & sinks<span class="tag">MW stacked</span></h3><div class="body"><div class="plot " id="pLoss"></div></div></section>
+<section class="panel "><h3>Refractory hot face & shell temperatures<span class="tag"></span></h3><div class="body"><div class="plot " id="pWall"></div></div></section><section class="panel "><h3>Ladle wall temperature field (node × time)<span class="tag">hot face → shell</span></h3><div class="body"><div class="plot " id="pHeat"></div></div></section>
+<section class="panel "><h3>Wall temperature profiles at selected time<span class="tag"></span></h3><div class="body"><input type="range" id="tSel" min="0" max="0" value="0" style="width:100%"><div class="plot " id="pProf"></div></div></section><section class="panel "><h3>Superheat & liquidus<span class="tag"></span></h3><div class="body"><div class="plot " id="pSH"></div></div></section></div>
+{% endblock %}

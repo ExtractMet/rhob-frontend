@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block sub %}Hazard registry, simulated interlock indicators, guarded state machine, event timeline{% endblock %}
+{% block content %}
+<div class="grid g2"><section class="panel "><h3>Alarms<span class="tag"></span></h3><div class="body"><div id="alarms"></div></div></section><section class="panel "><h3>Event timeline<span class="tag"></span></h3><div class="body"><div class="plot " id="pEv"></div></div></section></div>
+<div class="grid g2"><section class="panel "><h3>Events log<span class="tag"></span></h3><div class="body"><div id="events"></div></div></section><section class="panel "><h3>State machine & guard reason codes<span class="tag"></span></h3><div class="body"><div id="sm"></div></div></section></div>
+<section class="panel "><h3>Hazard & operating-limit registry (limits from site engineer)<span class="tag"></span></h3><div class="body"><div id="haz"></div></div></section>
+{% endblock %}

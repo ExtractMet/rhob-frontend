@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block sub %}Al deoxidation, alloy dissolution & yield, slag reoxidation, inclusion population (PREDICTED){% endblock %}
+{% block content %}
+<div class="note" style="margin-bottom:8px;color:var(--amber)">RH-OB vacuum treatment alone does not certify clean steel. Inclusion/total-O values are low-confidence model predictions; final T.O. and inclusion rating require plant sampling. Exogenous inclusions, spinel/Ca-aluminate chemistry and clogging index are UNAVAILABLE in this release.</div>
+<div class="grid g2"><section class="panel "><h3>Al, dissolved O and O in equilibrium with Al<span class="tag">log</span></h3><div class="body"><div class="plot " id="pAl"></div></div></section><section class="panel "><h3>Inclusion population by size class<span class="tag">ppm Al₂O₃ stacked</span></h3><div class="body"><div class="plot " id="pInc"></div></div></section>
+<section class="panel "><h3>Total oxygen prediction<span class="tag"></span></h3><div class="body"><div class="plot " id="pTO"></div></div></section><section class="panel "><h3>Alloying elements (Ti, Mn, Si, Nb, V, Cr)<span class="tag"></span></h3><div class="body"><div class="plot " id="pAlloy"></div></div></section>
+<section class="panel "><h3>Ladle slag composition<span class="tag">kg</span></h3><div class="body"><div class="plot " id="pSlag"></div></div></section><section class="panel "><h3>Slag–metal oxygen transfer (reoxidation)<span class="tag"></span></h3><div class="body"><div class="plot " id="pReox"></div></div></section></div>
+<div class="grid g2"><section class="panel "><h3>Additions (applied, with O-probe deox calculation)<span class="tag"></span></h3><div class="body"><div id="adds"></div></div></section><section class="panel "><h3>Outputs availability<span class="tag"></span></h3><div class="body"><div id="avail"></div></div></section></div>
+{% endblock %}

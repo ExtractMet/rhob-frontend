@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block sub %}Simulation history & replay · EKF soft sensor · delayed lab assimilation · hybrid ML validation{% endblock %}
+{% block content %}
+<section class="panel "><h3>Simulation history (persisted)<span class="tag"></span></h3><div class="body"><div id="sims"></div></div></section>
+<div class="grid g2"><section class="panel "><h3>EKF soft sensor: carbon (± 2σ) vs synthetic plant truth & lab<span class="tag"></span></h3><div class="body"><div class="plot tall" id="pEkfC"></div></div></section><section class="panel "><h3>EKF: temperature & kinetic multiplier θ<span class="tag"></span></h3><div class="body"><div class="plot tall" id="pEkfT"></div></div></section></div>
+<div class="grid g2"><section class="panel "><h3>Delayed lab assimilation log (forecast bias pre/post)<span class="tag"></span></h3><div class="body"><div id="ekfLog"></div></div></section><section class="panel "><h3>Twin state reconciliations<span class="tag"></span></h3><div class="body"><div id="assim"></div></div></section></div>
+<div class="grid g2"><section class="panel "><h3>Hybrid ML residual model — validation (SYNTHETIC; not for plant use)<span class="tag"></span></h3><div class="body"><div id="mlRep"></div></div></section><section class="panel "><h3>Permutation importance (T residual)<span class="tag"></span></h3><div class="body"><div class="plot " id="pImp"></div></div></section>
+<section class="panel "><h3>Endpoint T: physics-only vs hybrid vs synthetic plant<span class="tag">holdout highlighted</span></h3><div class="body"><div class="plot " id="pMl"></div></div></section><section class="panel "><h3>Feature drift (PSI)<span class="tag"></span></h3><div class="body"><div class="plot " id="pDrift"></div></div></section></div>
+{% endblock %}

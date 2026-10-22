@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block sub %}Lexicographic constrained optimization: feasibility → economics · sensitivity · advisory{% endblock %}
+{% block content %}
+<div class="ctrl"><label class="f">Wall-time budget (s)<input type="number" id="budget" value="180" min="20" max="900"></label>
+<label class="f">COBYLA max iterations<input type="number" id="maxit" value="8" min="2" max="40"></label>
+<button class="btn primary" id="optRun">Request optimization</button><div class="progress" style="width:260px"><div id="optProg"></div></div><span class="note" id="optMsg"></span></div>
+<div class="tiles" id="optTiles" style="margin-bottom:12px"></div>
+<div class="grid g2"><section class="panel "><h3>Decisions & endpoint: baseline vs optimized<span class="tag"></span></h3><div class="body"><div id="optTbl"></div></div></section><section class="panel "><h3>Constraint margins (≥ 0 satisfied)<span class="tag"></span></h3><div class="body"><div class="plot " id="pMarg"></div></div></section>
+<section class="panel "><h3>Carbon: baseline vs optimized (verified)<span class="tag"></span></h3><div class="body"><div class="plot " id="pOC"></div></div></section><section class="panel "><h3>Temperature: baseline vs optimized<span class="tag"></span></h3><div class="body"><div class="plot " id="pOT"></div></div></section>
+<section class="panel "><h3>Trade-off frontier (cost vs treatment time)<span class="tag"></span></h3><div class="body"><div class="plot " id="pFront"></div></div></section><section class="panel "><h3>Finite-difference sensitivity (recommendation stability)<span class="tag"></span></h3><div class="body"><div id="sens"></div></div></section></div>
+<div class="grid g2"><section class="panel "><h3>Optimized plan (phases)<span class="tag"></span></h3><div class="body"><div id="plan"></div></div></section><section class="panel "><h3>Alternatives / infeasibility handling<span class="tag"></span></h3><div class="body"><div id="alt"></div></div></section></div>
+<section class="panel "><h3>Advisory cards (from current forecast)<span class="tag"></span></h3><div class="body"><div id="adv"></div></div></section>
+{% endblock %}

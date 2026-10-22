@@ -1,0 +1,17 @@
+# UI theme tokens (mirrored as CSS custom properties in static/css/style.css)
+dark:
+  bg: "#0f1317"
+  panel: "#1a2129"
+  text: "#dfe6ee"
+  steel_blue: "#4f86b8"
+  cyan: "#46c1d6"
+  amber: "#e3a83b"
+  alarm_red: "#e2534f"
+  ok_green: "#55c07f"
+light:
+  bg: "#eef1f4"
+  panel: "#ffffff"
+  text: "#18212b"
+plant_branding:
+  logo: static/img/logo.svg
+  brand_env: PLANT_BRAND

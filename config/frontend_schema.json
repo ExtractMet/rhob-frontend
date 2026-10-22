@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "rhob-frontend page registry and backend contract used by the UI",
+  "pages": ["overview", "plant3d", "setup", "trends", "physics", "vacuum", "oxygen", "composition", "cleanliness", "thermal",
+            "whatif", "optimizer", "alarms", "history", "economics", "admin"],
+  "backend_endpoints_used": [
+    "GET /healthz", "GET /readyz", "GET /api/v1/metadata", "GET /api/v1/config/plant", "GET /api/v1/config/grades",
+    "GET /api/v1/config/scenarios", "GET /api/v1/config/scenarios/{name}", "GET /api/v1/config/materials", "GET /api/v1/config/refractories",
+    "GET /api/v1/config/thermo", "GET /api/v1/config/hazards", "GET /api/v1/config/state-machine",
+    "POST /api/v1/simulations", "POST /api/v1/simulations/validate", "GET /api/v1/simulations", "GET /api/v1/simulations/{id}",
+    "POST /api/v1/simulations/{id}/step", "POST /api/v1/simulations/{id}/pause", "POST /api/v1/simulations/{id}/resume",
+    "POST /api/v1/simulations/{id}/reset", "GET /api/v1/simulations/{id}/trajectory", "POST /api/v1/simulations/{id}/lab-results",
+    "GET /api/v1/simulations/{id}/forecast", "GET /api/v1/simulations/{id}/estimator", "GET /api/v1/simulations/{id}/ledger",
+    "GET /api/v1/simulations/{id}/mixing", "GET /api/v1/simulations/{id}/visual", "POST /api/v1/simulations/{id}/ensemble",
+    "POST /api/v1/scenarios/compare", "GET /api/v1/jobs/{job_id}", "POST /api/v1/optimization", "GET /api/v1/optimizations/{job_id}",
+    "GET /api/v1/stream/{id}", "GET /api/v1/ml/model", "GET /api/v1/ml/dataset", "GET /api/v1/ml/drift", "GET /api/v1/reports/{heat_id}",
+    "POST /api/v1/auth/demo-login", "POST /api/v1/alarms/ack", "POST /api/v1/advice/decision", "GET /api/v1/audit",
+    "GET /api/v1/admin/sessions", "GET /api/v1/live/sources"
+  ]
+}

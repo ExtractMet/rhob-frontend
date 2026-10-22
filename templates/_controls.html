@@ -1,0 +1,31 @@
+<div class="ctrl" id="ctrlbar" aria-label="simulation controls">
+  <div class="grp">
+    <label class="small muted" for="simSel">Simulation</label>
+    <select id="simSel" style="max-width:290px"><option value="">— none —</option></select>
+    <button class="btn sm" id="btnRefreshList" title="Refresh list">⟳</button>
+  </div>
+  <div class="grp">
+    <select id="scenarioSel" title="Synthetic scenario"></select>
+    <button class="btn primary" id="btnNew" title="Create a new simulation from the selected scenario">New heat</button>
+    <button class="btn" id="btnValidate" title="Validate selected scenario inputs">Validate inputs</button>
+  </div>
+  <div class="grp">
+    <button class="btn go" id="btnRun" title="Run heat to the end of the schedule">Run heat ▶▶</button>
+    <button class="btn" id="btnStep" title="Advance 60 s">+60 s</button>
+    <select id="speedSel" title="Play speed (simulated s per wall s)"><option value="10">×10</option><option value="30" selected>×30</option><option value="60">×60</option></select>
+    <button class="btn" id="btnPlay" title="Play (resume at speed)">Play ▶</button>
+    <button class="btn warn" id="btnPause" title="Pause: freezes the simulation clock">Pause ❚❚</button>
+    <button class="btn" id="btnResume" title="Resume manual stepping">Resume</button>
+    <button class="btn danger" id="btnReset" title="Reset to t = 0">Reset</button>
+  </div>
+  <div class="grp">
+    <button class="btn" id="btnLab" title="Apply available lab result (delayed reconciliation)">Apply lab result</button>
+    <button class="btn" id="btnOpt" title="Request optimization (Optimizer page)">Request optimization</button>
+    <button class="btn" id="btnCompare" title="Compare scenarios (What-if page)">Compare scenario</button>
+  </div>
+  <div class="grp">
+    <select id="exportSel"><option value="csv">CSV</option><option value="json">JSON</option><option value="html">Report (HTML)</option></select>
+    <button class="btn" id="btnExport">Export report</button>
+  </div>
+  <span class="statusline" id="statusLine">—</span>
+</div>

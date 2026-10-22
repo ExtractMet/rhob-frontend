@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block sub %}Consumption, cost per tonne, material inputs/outputs with compositions and weights{% endblock %}
+{% block content %}
+<div class="tiles" id="etiles" style="margin-bottom:12px"></div>
+<div class="grid g2"><section class="panel "><h3>Cost breakdown (ILLUSTRATIVE prices)<span class="tag"></span></h3><div class="body"><div class="plot " id="pCost"></div></div></section><section class="panel "><h3>Consumptions<span class="tag"></span></h3><div class="body"><div class="plot " id="pCons"></div></div></section></div>
+<div class="grid g2"><section class="panel "><h3>Inputs (arrival)<span class="tag"></span></h3><div class="body"><div id="inTbl"></div></div></section><section class="panel "><h3>Outputs (caster arrival)<span class="tag"></span></h3><div class="body"><div id="outTbl"></div></div></section></div>
+<div class="grid g2"><section class="panel "><h3>Steel composition in → out<span class="tag">ppm log</span></h3><div class="body"><div class="plot " id="pComp"></div></div></section><section class="panel "><h3>Slag in → out<span class="tag">kg</span></h3><div class="body"><div class="plot " id="pSlag"></div></div></section></div>
+<section class="panel "><h3>Element mass ledger (kg)<span class="tag"></span></h3><div class="body"><div id="ledger"></div></div></section>
+{% endblock %}

@@ -1,0 +1,4 @@
+/* Component styles are part of static/css/style.css (.viewport, .hud, .stagebadge, .inspect,
+   .label3d, .player, .disclaimer). This file is kept for the component bundle and is copied
+   into static/js/rhob3d/ by scripts/build_component.py. */
+.viewport{position:relative}

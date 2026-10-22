@@ -1,0 +1,25 @@
+# Render Blueprint for rhob-frontend (Python web service - NOT a static site: the Python server
+# renders the pages and proxies API calls server-to-server). Set API_BASE_URL to the backend URL.
+services:
+  - type: web
+    name: rhob-frontend
+    runtime: python
+    plan: starter
+    region: singapore
+    buildCommand: pip install -r requirements.txt && python scripts/build_component.py --check
+    startCommand: ./start.sh
+    healthCheckPath: /healthz
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.13.5"
+      - key: API_BASE_URL
+        sync: false          # paste https://<your-rhob-backend>.onrender.com in the dashboard
+      - key: FRONTEND_SESSION_SECRET
+        generateValue: true
+      - key: COOKIE_SECURE
+        value: "true"
+      - key: DEMO_DEFAULT_ACCOUNT
+        value: engineer
+      - key: API_TIMEOUT_S
+        value: "300"

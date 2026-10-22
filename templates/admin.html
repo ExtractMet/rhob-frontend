@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block sub %}Roles, connectivity, adapters, audit, documentation, licences{% endblock %}
+{% block content %}
+<div class="grid g3"><section class="panel "><h3>User & role<span class="tag"></span></h3><div class="body"><div id="who"></div><div class="note">Backend enforces permissions; switch demo role in the top bar. Production: SSO/OIDC behind approved gateway.</div></div></section>
+<section class="panel "><h3>Backend metadata & readiness<span class="tag"></span></h3><div class="body"><div id="meta"></div></div></section><section class="panel "><h3>Data adapters (read-only)<span class="tag"></span></h3><div class="body"><div id="adapters"></div></div></section></div>
+<div class="grid g2"><section class="panel "><h3>Audit log<span class="tag">Metallurgist+</span></h3><div class="body"><div id="audit"></div></div></section><section class="panel "><h3>Live sessions<span class="tag">ProcessEngineer+</span></h3><div class="body"><div id="sess"></div></div></section></div>
+<section class="panel "><h3>Documentation<span class="tag"></span></h3><div class="body"><div id="docs"></div></div></section>
+{% endblock %}

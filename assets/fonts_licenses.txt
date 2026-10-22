@@ -1,0 +1,4 @@
+No web fonts are bundled. The UI uses the operating-system font stack (Segoe UI / Roboto / Helvetica / Arial)
+and monospace stack (Cascadia Mono / Consolas / DejaVu Sans Mono). No font licences required.
+Vendored libraries: three.js r160 (MIT, static/vendor/three/LICENSE), plotly.js-dist-min 2.35.2 (MIT, static/vendor/PLOTLY_LICENSE).
+All 3D geometry and the logo placeholder are original procedural/vector work (no third-party CAD, photos or icons).

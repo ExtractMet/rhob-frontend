@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block sub %}Coupled balances every time step · energy ledger · element ledger across all reservoirs · equations{% endblock %}
+{% block content %}
+<div class="grid g2"><section class="panel "><h3>Cumulative energy ledger (sources + / sinks −)<span class="tag">MJ</span></h3><div class="body"><div class="plot tall" id="pLed"></div></div></section><section class="panel "><h3>Heat-flow rates<span class="tag">MW</span></h3><div class="body"><div class="plot tall" id="pRate"></div></div></section>
+<section class="panel "><h3>Closure residuals<span class="tag">relative, log</span></h3><div class="body"><div class="plot " id="pClos"></div></div></section><section class="panel "><h3>Energy totals (heat-in / heat-out)<span class="tag">MJ</span></h3><div class="body"><div class="plot " id="pTot"></div></div></section></div>
+<section class="panel "><h3>Element ledger across reservoirs (kg) — initial + inputs = inventory<span class="tag">Fe, C, O, H, N, Al, Si, Mn, Ti …</span></h3><div class="body"><div id="elLed"></div></div></section>
+<div class="grid g2"><section class="panel "><h3>Thermochemistry at bath temperature<span class="tag">K(T) = exp(−ΔG°/RT)</span></h3><div class="body"><div id="thermo"></div></div></section><section class="panel "><h3>State vector layout & solver statistics<span class="tag"></span></h3><div class="body"><div id="layout"></div></div></section></div>
+<section class="panel "><h3>Model equations (summary — full derivation in backend docs/MODEL_EQUATIONS.md)<span class="tag"></span></h3><div class="body"><div id="eqs"></div></div></section>
+{% endblock %}

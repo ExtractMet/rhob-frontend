@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block sub %}Heat state, forecast endpoint and operator advisories{% endblock %}
+{% block content %}
+<div class="grid"><section class="panel "><h3>Heat state (latest model state)<span class="tag">MEASURED / PREDICTED / SOFT-SENSED labels per value</span></h3><div class="body"><div class="tiles" id="tiles"></div><div class="stagebar" id="stagebar"></div><div class="note">Stage timeline (shaded = completed). ⛔ = guarded transition blocked.</div></div></section>
+<div class="grid g21"><section class="panel "><h3>RH-OB station schematic (live values)<span class="tag">click 02 for full 3D</span></h3><div class="body"><div class="schematic" id="schem"></div></div></section><section class="panel "><h3>Grade endpoint checks (forecast at RH end / caster arrival)<span class="tag">hard limits outrank cost</span></h3><div class="body"><div id="endpoint"></div></div></section></div>
+<div class="grid g2"><section class="panel "><h3>Carbon & dissolved oxygen<span class="tag">log scale</span></h3><div class="body"><div class="plot " id="pCO"></div></div></section><section class="panel "><h3>Temperature<span class="tag">ladle / vessel / bulk</span></h3><div class="body"><div class="plot " id="pT"></div></div></section>
+<section class="panel "><h3>Vessel pressure & set-point<span class="tag">absolute, log</span></h3><div class="body"><div class="plot " id="pP"></div></div></section><section class="panel "><h3>Gases & circulation<span class="tag">Ar, O₂, circulation</span></h3><div class="body"><div class="plot " id="pQ"></div></div></section></div>
+<section class="panel "><h3>Operator advisory cards<span class="tag">OPERATOR_ADVISORY · human approval</span></h3><div class="body"><div id="adv"></div></div></section>
+<div class="grid g2"><section class="panel "><h3>Active alarms (simulated indicators)<span class="tag"></span></h3><div class="body"><div id="alarms"></div></div></section><section class="panel "><h3>Event timeline<span class="tag"></span></h3><div class="body"><div id="events"></div></div></section></div></div>
+{% endblock %}

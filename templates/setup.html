@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block sub %}Heat input editor, plant & grade configuration, ladle capacity/dimension presets, schedule editor{% endblock %}
+{% block content %}
+<div class="grid g2">
+<section class="panel "><h3>1 · Start from a scenario / capacity preset<span class="tag"></span></h3><div class="body"><div class="formgrid"><label class="f">Scenario template<select id="tplScenario"></select></label>
+<label class="f">Ladle capacity preset<select id="capacity"><option value="">(keep scenario geometry)</option><option>100</option><option>150</option><option>200</option><option>250</option><option selected>300</option><option>350</option></select></label>
+<label class="f">Equipment variant<select id="variant"><option value="RH_OB">RH-OB (O₂ tuyeres)</option><option value="RH">Conventional RH (O₂ off)</option></select></label>
+<label class="f">Mode<select id="mode"><option>DEMO_SYNTHETIC</option><option>ENGINEERING_BATCH_SIMULATION</option><option>WHAT_IF</option><option>OPERATOR_ADVISORY</option><option>SHADOW_ONLINE</option></select></label></div>
+<div style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap"><button class="btn primary" id="loadTpl">Load template into form</button><button class="btn" id="applyPreset">Apply capacity preset</button>
+<button class="btn" id="exportReq">Export request JSON</button><label class="btn">Import request JSON<input type="file" id="importReq" accept=".json" hidden></label></div>
+<div class="note" id="presetNote"></div></div></section>
+<section class="panel "><h3>Validation & creation<span class="tag"></span></h3><div class="body"><div style="display:flex;gap:6px;flex-wrap:wrap"><button class="btn" id="validate">Validate inputs</button><button class="btn go" id="createRun">Create &amp; run heat</button><button class="btn primary" id="createStep">Create (step / play mode)</button></div>
+<ul class="issues small" id="issues"></ul><div class="note">All numbers carry units; bounds are enforced by the backend schema (422 on violation). Kinetic calibration changes require the ProcessEngineer role.</div></div></section>
+</div>
+<div class="grid g3">
+<section class="panel "><h3>2 · Heat (arrival) data<span class="tag">MEASURED / LAB ANALYZED</span></h3><div class="body"><div id="heatForm"></div></div></section>
+<section class="panel "><h3>3 · Grade card<span class="tag">ILLUSTRATIVE grade cards</span></h3><div class="body"><div id="gradeForm"></div></div></section>
+<section class="panel "><h3>4 · Plant limits & vacuum<span class="tag">site-engineer supplied</span></h3><div class="body"><div id="plantForm"></div></div></section>
+</div>
+<div class="grid g2">
+<section class="panel "><h3>5 · Geometry & dimensions<span class="tag">ladle / snorkels / vessel</span></h3><div class="body"><div id="geoForm"></div><div id="geoDerived" class="note"></div></div></section>
+<section class="panel "><h3>6 · Refractory design (layers, thickness, properties)<span class="tag">1-D conduction model</span></h3><div class="body"><div id="refForm"></div></div></section>
+</div>
+<div class="grid g2"><section class="panel "><h3>7 · Thermal & kinetic calibration<span class="tag">ILLUSTRATIVE · calibratable</span></h3><div class="body"><div id="kinForm"></div></div></section><section class="panel "><h3>8 · Additions<span class="tag">O-probe auto-deox optional</span></h3><div class="body"><div id="addForm"></div></div></section></div>
+<section class="panel "><h3>9 · Operating schedule (piecewise-constant manipulated variables)<span class="tag">editable · guarded state machine</span></h3><div class="body"><div class="stagebar" id="schedBar"></div><div id="schedForm"></div></div></section>
+
+{% endblock %}

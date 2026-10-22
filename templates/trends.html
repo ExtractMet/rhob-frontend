@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block sub %}Shared time cursor across all charts · lab points vs model traces · forecast & prediction bands{% endblock %}
+{% block content %}
+<div class="ctrl"><button class="btn" id="fcBtn">Forecast to end + 90 % bands</button><label class="small"><input type="checkbox" id="showPlant"> overlay synthetic plant truth</label>
+<label class="small"><input type="checkbox" id="logC" checked> log C/O</label><span class="note" id="sseState">live stream idle</span></div>
+<div class="grid g2"><section class="panel "><h3>Carbon [C]<span class="tag">lab ◆ vs model —</span></h3><div class="body"><div class="plot " id="pC"></div></div></section><section class="panel "><h3>Dissolved oxygen [O] & Al<span class="tag"></span></h3><div class="body"><div class="plot " id="pO"></div></div></section>
+<section class="panel "><h3>Temperature<span class="tag">lab ◆ thermocouple</span></h3><div class="body"><div class="plot " id="pT"></div></div></section><section class="panel "><h3>Hydrogen & nitrogen<span class="tag">lab ◆</span></h3><div class="body"><div class="plot " id="pHN"></div></div></section>
+<section class="panel "><h3>Vessel pressure<span class="tag">absolute</span></h3><div class="body"><div class="plot " id="pP"></div></div></section><section class="panel "><h3>Argon / oxygen flows<span class="tag"></span></h3><div class="body"><div class="plot " id="pG"></div></div></section>
+<section class="panel "><h3>Circulation & mixing<span class="tag"></span></h3><div class="body"><div class="plot " id="pQ"></div></div></section><section class="panel "><h3>Off-gas CO / CO₂ / H₂ / N₂<span class="tag"></span></h3><div class="body"><div class="plot " id="pOG"></div></div></section>
+<section class="panel "><h3>Heat & element balance residuals<span class="tag">closure check every record</span></h3><div class="body"><div class="plot " id="pRes"></div></div></section><section class="panel "><h3>Forecast endpoint history (assimilation effect)<span class="tag"></span></h3><div class="body"><div class="plot " id="pFH"></div></div></section></div>
+<div class="grid g2"><section class="panel "><h3>Lab results (synthetic plant) & reconciliation<span class="tag"></span></h3><div class="body"><div id="labs"></div></div></section><section class="panel "><h3>Live packet stream (SSE, Last-Event-ID resume)<span class="tag"></span></h3><div class="body"><div id="live" class="tblwrap" style="max-height:300px"></div></div></section></div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{
+  "name": "rhob-3d",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Three.js RH-OB digital twin 3D component (procedural geometry, state-bound animation). Extractmet Private Limited.",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "vendor": "node scripts/vendor.mjs",
+    "build": "node scripts/vendor.mjs && python ../../scripts/build_component.py"
+  },
+  "dependencies": {
+    "three": "0.160.0",
+    "plotly.js-dist-min": "2.35.2"
+  },
+  "license": "SEE LICENSE IN ../../LICENSE"
+}

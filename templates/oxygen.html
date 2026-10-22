@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block sub %}RH-OB oxygen partition by elemental O accounting · argon lift · circulation · mixing{% endblock %}
+{% block content %}
+<div class="tiles" id="otiles" style="margin-bottom:12px"></div>
+<div class="grid g2"><section class="panel "><h3>Oxygen flow, absorption efficiency & cumulative O₂<span class="tag"></span></h3><div class="body"><div class="plot " id="pO2"></div></div></section><section class="panel "><h3>Jet oxygen partition (competitive oxidation)<span class="tag">mol O/s stacked</span></h3><div class="body"><div class="plot " id="pJet"></div></div></section>
+<section class="panel "><h3>Jet FeO pool, dissolution & post-combustion<span class="tag"></span></h3><div class="body"><div class="plot " id="pFeO"></div></div></section><section class="panel "><h3>Circulation: Kuwabara raw vs saturated, Ar lift<span class="tag"></span></h3><div class="body"><div class="plot " id="pCirc"></div></div></section>
+<section class="panel "><h3>Steel hold-up & vessel bath depth<span class="tag"></span></h3><div class="body"><div class="plot " id="pHold"></div></div></section><section class="panel "><h3>Mixing time t95 & recirculation number<span class="tag"></span></h3><div class="body"><div class="plot " id="pMix"></div></div></section>
+<section class="panel "><h3>Tracer response (pulse into vessel) — residence-time behaviour<span class="tag">linear zone network</span></h3><div class="body"><div class="plot " id="pRTD"></div></div></section><section class="panel "><h3>Circulation vs argon (operating points)<span class="tag"></span></h3><div class="body"><div class="plot " id="pQvsG"></div></div></section></div>
+{% endblock %}

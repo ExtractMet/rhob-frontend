@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block sub %}Compare scenarios and parameter variants · ensemble uncertainty{% endblock %}
+{% block content %}
+<div class="grid g12"><section class="panel "><h3>Scenarios to compare<span class="tag"></span></h3><div class="body"><div id="cmpList"></div><div style="margin-top:8px;display:flex;gap:6px"><button class="btn primary" id="cmpRun">Compare (background job)</button><button class="btn" id="ensRun">Ensemble uncertainty of current heat</button></div><div class="progress" style="margin-top:8px"><div id="cmpProg"></div></div><div class="note" id="cmpMsg"></div></div></section>
+<section class="panel "><h3>KPI & endpoint comparison<span class="tag"></span></h3><div class="body"><div id="cmpTbl"></div></div></section></div>
+<div class="grid g2"><section class="panel "><h3>Carbon<span class="tag"></span></h3><div class="body"><div class="plot " id="cC"></div></div></section><section class="panel "><h3>Temperature<span class="tag"></span></h3><div class="body"><div class="plot " id="cT"></div></div></section><section class="panel "><h3>Nitrogen<span class="tag"></span></h3><div class="body"><div class="plot " id="cN"></div></div></section><section class="panel "><h3>Vessel pressure<span class="tag"></span></h3><div class="body"><div class="plot " id="cP"></div></div></section>
+<section class="panel "><h3>Total oxygen (predicted)<span class="tag"></span></h3><div class="body"><div class="plot " id="cTO"></div></div></section><section class="panel "><h3>Ensemble 5–50–95 % bands (current heat)<span class="tag"></span></h3><div class="body"><div class="plot " id="cEns"></div></div></section></div>
+{% endblock %}

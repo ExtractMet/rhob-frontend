@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page.title }} · RH-OB Twin</title>
+<link rel="icon" href="/static/img/logo.svg">
+<link rel="stylesheet" href="/static/css/style.css?v={{ version }}">
+<script>try{const t=localStorage.getItem('rhob.theme');if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
+<script type="importmap">{"imports":{"three":"/static/vendor/three/three.module.min.js","three/addons/":"/static/vendor/three/addons/"}}</script>
+<script src="/static/vendor/plotly.min.js"></script>
+<script src="/static/js/common.js?v={{ version }}"></script>
+<script src="/static/js/charts.js?v={{ version }}"></script>
+<script src="/static/js/schematic.js?v={{ version }}"></script>
+<script src="/static/js/widgets.js?v={{ version }}"></script>
+</head>
+<body data-page="{{ page.slug }}" data-role="{{ role }}">
+<div class="shell">
+  <div class="safety" role="status">
+    <span>⚠ ENGINEERING DEMONSTRATION · NOT CONNECTED TO PLANT CONTROLS · SYNTHETIC DATA · ADVISORY ONLY</span>
+    <span class="gate">Maturity Gate A — software complete, not plant-validated</span>
+    <span id="advInhibit"></span>
+  </div>
+  <header class="topbar">
+    <div class="brand">
+      <img class="logo" src="/static/img/logo.svg" alt="">
+      <div><b>RH-OB Process Control &amp; Digital Twin</b><small>Extractmet Private Limited · Hybrid Physics–AI L2 Advisory</small></div>
+    </div>
+    <div class="idchips">
+      <span class="chip">Plant <b>{{ brand }}</b></span>
+      <span class="chip">Station <b id="chipStation">RH-OB-1</b></span>
+      <span class="chip">Heat <b id="chipHeat">—</b></span>
+      <span class="chip">Grade <b id="chipGrade">—</b></span>
+      <span class="chip mode">Mode <b id="chipMode">DEMO_SYNTHETIC</b></span>
+      <span class="chip" id="chipStatus">Status <b>—</b></span>
+      <span class="chip">t <b id="chipTime">0.0 min</b></span>
+      <span class="chip">Stage <b id="chipStage">—</b></span>
+    </div>
+    <div class="spacer"></div>
+    <span class="conn" id="conn">backend …</span>
+    <form method="post" action="/login" style="display:flex;gap:4px;align-items:center" title="Demo role (backend enforces permissions)">
+      <input type="hidden" name="next" value="/page/{{ page.slug }}">
+      <select name="account" aria-label="demo role" onchange="this.form.submit()">
+        {% for acc, r in [('viewer','Viewer'),('operator','Operator'),('metallurgist','Metallurgist'),('engineer','ProcessEngineer'),('admin','Admin')] %}
+        <option value="{{ acc }}" {% if r == role %}selected{% endif %}>{{ r }}</option>{% endfor %}
+      </select>
+    </form>
+    <select id="unitsSel" aria-label="display units" title="Display units">
+      <option value="si_c">°C · mbar · Nm³/h · ppm</option>
+      <option value="si_k">K · Pa · NL/min · ppm</option>
+      <option value="kpa">°C · kPa · Nm³/h · wt%</option>
+    </select>
+    <button class="btn sm" id="themeBtn" title="Toggle light/dark">◐</button>
+  </header>
+  <nav class="side" aria-label="pages">
+    <div class="sec">Operator desk</div>
+    {% for p in pages %}
+      {% if p.n == '05' %}<div class="sec">Process analysis</div>{% endif %}
+      {% if p.n == '11' %}<div class="sec">Decision support</div>{% endif %}
+      {% if p.n == '14' %}<div class="sec">Engineering</div>{% endif %}
+      <a href="/page/{{ p.slug }}" class="{% if p.slug == page.slug %}active{% endif %}" data-slug="{{ p.slug }}"><span class="n">{{ p.n }}</span><span class="i">{{ p.icon }}</span>{{ p.title }}</a>
+    {% endfor %}
+    <div class="sec">Session</div>
+    <div class="note" style="padding:4px 9px">User <b>{{ user }}</b> · {{ role }}</div>
+    <div class="note" style="padding:0 9px 10px">Frontend v{{ version }}</div>
+  </nav>
+  <main class="main">
+    <div class="pagehead"><h1>{{ page.n }} · {{ page.title }}</h1><span class="sub">{% block sub %}{% endblock %}</span></div>
+    {% include "_controls.html" %}
+    {% block content %}{% endblock %}
+  </main>
+</div>
+<div class="toast" id="toast" aria-live="polite"></div>
+{% block scripts %}<script type="module" src="/static/js/pages/{{ page.slug }}.js?v={{ version }}"></script>{% endblock %}
+</body>
+</html>
